@@ -236,7 +236,18 @@ $  python
 
 ---
 
-## Les éditeurs disponibles avec Anaconda: Idle
+## Types et opérations
 
-![](https://gyazo.com/a9d41ed508efd273acb6ff598608930b.png)
+---
 
+## Les types numériques: la boite à outils
+
+- Entier et nombres à virgule flottante
+- Nombres complexes
+- Decimal: nombres à précision fixe
+- Fraction: nombres rationnels
+- Sets: opérations sur des ensembles
+- Booléens: True et False
+- Fonctions intégrées: math, random
+- Expressions: entier à précision infinie, opérations sur les bits, hex, octal, binaire
+- Vecteurs, visualisation
