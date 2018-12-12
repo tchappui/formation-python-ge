@@ -80,3 +80,53 @@ Exécutez la commande python dans un terminal:
 ### Votre éditeur préféré vous donne accès à un terminal
 
 ![](https://i.gyazo.com/5c83d549925d98dac739b6bd5b5062a2.png)
+
+--- 
+## Exécuter un fichier Python depuis un terminal
+
+```
+$ python monfichier.py
+```
+
+---
+
+## Isoler vos dépendences dans un environnement virtuel
+
+Sur windows (dans un terminal):
+
+```
+$ python -m venv env
+$ env\scripts\activate
+(env) $
+```
+Sur les autres systèmes:
+
+```
+$ python3 -m venv env
+$ source env/bin/activate
+(env) $
+```
+
+---
+
+## Se simplifier la vie avec pipenv
+
+```
+$ pip install pipenv
+```
+
+```
+$ pipenv install requests django gunicorn
+$ pipenv shell
+```
+---
+
+## Un premier script
+
+```python
+import sys                  # importe un module de la bib standard
+print(sys.platform)
+print(2 ** 100)             # élève 2 à la puissance de 100
+x = 'Spam!'
+print(x * 8)                # répète une chaine 8 fois
+```
