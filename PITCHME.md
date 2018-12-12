@@ -124,9 +124,9 @@ $ pipenv shell
 ## Un premier script
 
 ```python
-import sys                  # importe un module de la bib standard
+import sys            # importe un module de la bib standard
 print(sys.platform)
-print(2 ** 100)             # élève 2 à la puissance de 100
+print(2 ** 100)       # élève 2 à la puissance de 100
 x = 'Spam!'
-print(x * 8)                # répète une chaine 8 fois
+print(x * 8)          # répète une chaine 8 fois
 ```
