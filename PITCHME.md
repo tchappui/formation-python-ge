@@ -119,6 +119,31 @@ $ pip install pipenv
 $ pipenv install requests django gunicorn
 $ pipenv shell
 ```
+
+---
+
+## Expérimentons depuis un interpréteur interactif
+
+---
+
+```python
+>>> from pathlib import Path
+```
+
+```python
+>>> p = Path('.')
+>>> p
+>>> list(p.glob('**/*.pdf'))
+```
+
+---
+## Instructions sur plusieurs lignes
+
+```python
+>>> for x in 'Bonjour':
+...     print(x) 
+...
+```
 ---
 
 ## Un premier script
@@ -131,12 +156,9 @@ x = 'Spam!'
 print(x * 8)          # répète une chaine 8 fois
 ```
 
----
-
-## Expérimentons depuis un terminal
-
----
-
-```python
->>> from pathlib import Path
+```console
+$ python premierscript.py
+win32
+1267650600228229401496703205376
+Spam!Spam!Spam!Spam!Spam!Spam!Spam!Spam!
 ```
