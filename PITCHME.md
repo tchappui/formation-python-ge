@@ -204,6 +204,10 @@ $ py -3 premierscript.py
 ```
 ---
 
+## Les Jupyter Notebooks: outils parfait pour explorer les possibilités de Python
+
+---
+
 ## Importer et recharger
 
 ```python
@@ -431,6 +435,10 @@ False                 # Not same as: False < 3 (which means 0 < 3, which is true
 >>> 0b1, 0b10000, 0b11111111 # Binary literals: base 2, digits 0-1 (3.X, 2.6+)
 (1, 16, 255)
 ```
+
+---?color=#E58537
+
+Les vecteurs: une technique efficace pour les ensembles de valeurs
 
 ---
 
