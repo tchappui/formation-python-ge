@@ -435,11 +435,31 @@ False                 # Not same as: False < 3 (which means 0 < 3, which is true
 >>> 0b1, 0b10000, 0b11111111 # Binary literals: base 2, digits 0-1 (3.X, 2.6+)
 (1, 16, 255)
 ```
+---
+## Decimal, Fraction
 
----?color=#E58537
+```python
+>>> 1 / 3                           # Floating-point (add a .0 in Python 2.X)
+0.3333333333333333
+>>> (2/3) + (1/2)
+1.1666666666666665
 
-Les vecteurs: une technique efficace pour les ensembles de valeurs
+>>> import decimal                  # Decimals: fixed precision
+>>> d = decimal.Decimal('3.141')
+>>> d + 1
+Decimal('4.141')
 
+>>> decimal.getcontext().prec = 2
+>>> decimal.Decimal('1.00') / decimal.Decimal('3.00')
+Decimal('0.33')
+
+>>> from fractions import Fraction  # Fractions: numerator+denominator
+>>> f = Fraction(2, 3)
+>>> f + 1
+Fraction(5, 3)
+>>> f + Fraction(1, 2)
+Fraction(7, 6)
+```
 ---
 
 ## Les chaines de caractères
@@ -932,3 +952,41 @@ spam!
 >>> T[0]                        # Indexing, slicing, and more
 1
 ```
+---
+
+## Les ensembles: un outils sous utilisé
+
+```python
+>>> X = set('spam')
+>>> Y = {'h', 'a', 'm'}  
+
+>>> X, Y                
+({'m', 'a', 'p', 's'}, {'m', 'a', 'h'})
+
+>>> X & Y                           # Intersection
+{'m', 'a'}
+
+>>> X | Y                           # Union
+{'m', 'h', 'a', 'p', 's'}
+
+>>> X - Y                           # Difference
+{'p', 's'}
+
+>>> X > Y                           # Superset
+False
+
+>>> {n ** 2 for n in [1, 2, 3, 4]}  # Set comprehensions
+{16, 1, 4, 9}
+```
+---
+## Duplicats et différences
+
+```python
+>>> list(set([1, 2, 1, 3, 1]))      # Filtering out duplicates
+[1, 2, 3]
+>>> set('spam') - set('ham')        # Finding differences in collections
+{'p', 's'}
+>>> set('spam') == set('asmp')      # Order-neutral equality ('spam'=='asmp' False)
+True
+```
+---
