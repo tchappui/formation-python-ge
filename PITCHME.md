@@ -11,6 +11,12 @@ Formateur Python et Professeur à la Haute Ecole d'Ingénierie de Fribourg
 
 ---
 
+## Module 1
+
+Fondamentaux du langages
+
+---
+
 @snap[span-100]
 ## Pourquoi Python est-il si populaire?
 @snapend
@@ -22,6 +28,21 @@ Formateur Python et Professeur à la Haute Ecole d'Ingénierie de Fribourg
 - Interface facile avec des composants externes
 - Parce que c'est beau :)
 
+---
+
+## Que peut-on faire?
+
+- Programmation système avec la bibliothèque standard
+- Interfaces graphiques avec Tkinter ou Qt
+- Programmation web avec Flask ou Django
+- Programmation réseau avec Twisted, ZeroMQ, Sockets
+- Calculs scientifiques et data science
+
+---
+
+## Automatiser tout ce qui est ennuyeux
+
+![](https://automatetheboringstuff.com/images/automate_cover_medium.png)
 
 ---
 @snap[span-100]
@@ -251,3 +272,245 @@ $  python
 - Fonctions intégrées: math, random
 - Expressions: entier à précision infinie, opérations sur les bits, hex, octal, binaire
 - Vecteurs, visualisation
+
+---
+
+```python
+4, −24, 0, 99999999999999   # Entiers (espace illimité)
+```
+
+```python
+1.23, 1., 3.14e-10, 4E210, 4.0e+210  # Floats
+```
+
+```python
+0o177, 0x9ff, 0b101010  # Bases 8, 16, 2
+```
+
+```python
+3+4j, 3.0+4.0j, 3J  # Nombres complexes
+```
+
+```python
+Decimal('1.0'), Fraction(1, 3)
+```
+
+---
+
+## Les outils
+
+```python
++, -, *, /, >>, **, %, &  # Opérateurs
+```
+
+```python
+random, math  # modules utilitaires
+```
+
+```python
+# Fonctions intégrées
+pow, abs, round, int, hex, bin
+w, abs, round, int, hex, bin
+```
+
+---
+
+## Les nombres en action
+
+```
+>>> a = 3             # Variable crée 
+>>> b = 4
+>>> a + 1, a − 1      # Addition (3 + 1), soustraction (3 − 1)
+(4, 2)
+>>> b * 3, b / 2      # Multiplication (4 * 3), division 
+(12, 2.0)
+>>> a % 2, b ** 2     # Modulo (reste), puissance (4 ** 2)
+(1, 16)
+>>> 2 + 4.0, 2.0 ** b  # Conversions
+(6.0, 16.0)
+
+```
+---
+
+## Les messages d'erreurs
+
+```python
+>>> c * 2
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+  NameError: name 'c' is not defined
+```
+
+---
+
+## La précédence
+
+```python
+>>> b / 2 + a        # même chose que ((4 / 2) + 3) 
+5.0
+>>> b / (2.0 + a)    # même chose que (4 / (2.0 + 3))
+0.8
+```
+
+---
+
+## Les comparaisons
+
+```python
+>>> 1 < 2                  # Less than
+True
+>>> 2.0 >= 1               # Greater than or equal: mixed-type 1 converted to 1.0
+True
+>>> 2.0 == 2.0             # Equal value
+True
+>>> 2.0 != 2.0             # Not equal value
+False
+```
+---
+
+## Chainer des comparaisons
+
+```python
+>>> X = 2
+>>> Y = 4
+>>> Z = 6
+
+>>> X < Y < Z           # Chained comparisons: range tests
+True
+>>> X < Y and Y < Z
+True
+```
+
+---
+
+```python
+>>> X < Y > Z
+False
+>>> X < Y and Y > Z
+False
+>>> 1 < 2 < 3.0 < 4
+True
+>>> 1 > 2 > 3.0 > 4
+False
+```
+
+```python
+>>> 1 == 2 < 3        # Same as: 1 == 2 and 2 < 3
+False                 # Not same as: False < 3 (which means 0 < 3, which is true!)
+```
+---
+
+## La division classique et la division entière
+
+```python
+>>> 10 / 4         # Differs in 3.X: keeps remainder
+2.5
+>>> 10 / 4.0       # Same in 3.X: keeps remainder
+2.5
+>>> 10 // 4        # Same in 3.X: truncates remainder
+2
+>>> 10 // 4.0      # Same in 3.X: truncates to floor
+2.0
+```
+---
+# Précision des entiers
+
+```python
+>>> 2 ** 200
+1606938044258990275541962092341162602522202993782792835301376
+```
+
+---
+## Dans différentes bases
+
+```python
+>>> 0o1, 0o20, 0o377         # Octal literals: base 8, digits 0-7 (3.X, 2.6+)
+(1, 16, 255)
+>>> 0x01, 0x10, 0xFF         # Hex literals: base 16, digits 0-9/A-F (3.X, 2.X)
+(1, 16, 255)
+>>> 0b1, 0b10000, 0b11111111 # Binary literals: base 2, digits 0-1 (3.X, 2.6+)
+(1, 16, 255)
+```
+
+---
+
+## Les chaines de caractères
+
+```python
+>>> S = 'Spam'     # Make a 4-character string, and assign it to a name
+>>> len(S)         # Length
+4
+>>> S[0]           # The first item in S, indexing by zero-based position
+'S'
+>>> S[1]           # The second item from the left
+'p'
+
+>>> S[-1]          # The last item from the end in S
+'m'
+>>> S[-2]          # The second-to-last item from the end
+'a'
+```
+
+---
+
+## Découper une chaine avec les slices
+
+```python
+>>> S[1:]           # Everything past the first (1:len(S))
+'pam'
+>>> S               # S itself hasn't changed
+'Spam'
+>>> S[0:3]          # Everything but the last
+'Spa'
+>>> S[:3]           # Same as S[0:3]
+'Spa'
+>>> S[:-1]          # Everything but the last again, but simpler (0:-1)
+'Spa'
+>>> S[:]            # All of S as a top-level copy (0:len(S))
+'Spam'
+```
+---
+
+## Concaténer et répéter une chaine
+
+```python
+
+'Spam'
+>>> S + 'xyz'             # Concatenation
+'Spamxyz'
+>>> S                     # S is unchanged
+'Spam'
+>>> S * 8                 # Repetition
+'SpamSpamSpamSpamSpamSpamSpamSpam'
+```
+
+---?color=#E58537
+
+## Attention! Les chaines ne sont pas mutables
+
+```python
+
+'Spam'
+
+>>> S[0] = 'z'             # Immutable objects cannot be changed
+...error text omitted...
+TypeError: 'str' object does not support item assignment
+
+>>> S = 'z' + S[1:]        # But we can run expressions to make new objects
+>>> S
+'zpam'
+```
+
+---
+
+## Une chaine peut être convertie en liste
+
+```python
+>>> S = 'shrubbery'
+>>> L = list(S)                                     # Expand to a list: [...]
+>>> L
+['s', 'h', 'r', 'u', 'b', 'b', 'e', 'r', 'y']
+>>> L[1] = 'c'                                      # Change it in place
+>>> ''.join(L)                                      # Join with empty delimiter
+'scrubbery'
+```
