@@ -236,5 +236,7 @@ $  python
 
 ---
 
+## Les éditeurs disponibles avec Anaconda: Idle
 
+![](https://gyazo.com/a9d41ed508efd273acb6ff598608930b.png)
 
