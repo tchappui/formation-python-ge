@@ -861,4 +861,66 @@ c => 3
 ```
 ---
 
+## La boucle for
 
+```python
+>>> for c in 'spam':
+        print(c.upper())
+
+S
+P
+A
+M
+```
+---
+
+## La boucle while
+
+```python
+>>> x = 4
+>>> while x > 0:
+        print('spam!' * x)
+        x -= 1
+
+spam!spam!spam!spam!
+spam!spam!spam!
+spam!spam!
+spam!
+```
+
+---
+
+## Itérations et optimisation (1)
+
+```python
+>>> squares = [x ** 2 for x in [1, 2, 3, 4, 5]]
+>>> squares
+[1, 4, 9, 16, 25]
+```
+---
+
+## Itérations et optimisation (2)
+
+```python
+>>> squares = []
+>>> for x in [1, 2, 3, 4, 5]:   
+        squares.append(x ** 2) 
+
+>>> squares
+[1, 4, 9, 16, 25]
+```
+---
+
+## Les tuples: une liste immutable
+
+```python
+>>> T = (1, 2, 3, 4)            # A 4-item tuple
+>>> len(T)                      # Length
+4
+
+>> T + (5, 6)                   # Concatenation
+(1, 2, 3, 4, 5, 6)
+
+>>> T[0]                        # Indexing, slicing, and more
+1
+```
