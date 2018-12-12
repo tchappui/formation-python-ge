@@ -130,3 +130,13 @@ print(2 ** 100)       # élève 2 à la puissance de 100
 x = 'Spam!'
 print(x * 8)          # répète une chaine 8 fois
 ```
+
+---
+
+## Expérimentons depuis un terminal
+
+---
+
+```python
+>>> from pathlib import Path
+```
