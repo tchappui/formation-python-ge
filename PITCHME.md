@@ -7,6 +7,8 @@
 
 Formateur Python et Professeur à la Haute Ecole d'Ingénierie de Fribourg
 
+**thierry@chappuis.net**
+
 ---
 
 @snap[span-100]
@@ -17,7 +19,7 @@ Formateur Python et Professeur à la Haute Ecole d'Ingénierie de Fribourg
 - Productivité accrue
 - Portabilité
 - Ecosystème très très riche
-- Intégration facile avec des composants C, C++ ou Fortran
+- Interface facile avec des composants externes
 - Parce que c'est beau :)
 
 
@@ -27,6 +29,8 @@ Formateur Python et Professeur à la Haute Ecole d'Ingénierie de Fribourg
 @snapend
 
 ![](https://gyazo.com/fad46ca33fe80b68f9e67a4231b8ba64.png)
+
+---
 
 
 
