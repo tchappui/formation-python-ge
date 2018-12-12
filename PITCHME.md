@@ -75,5 +75,8 @@ Exécutez la commande python dans un terminal:
 - cmd.exe
 - Powershell
 - Idle
-- Votre éditeur préféré 
 
+---
+### Votre éditeur préféré vous donne accès à un terminal
+
+![](https://i.gyazo.com/5c83d549925d98dac739b6bd5b5062a2.png)
