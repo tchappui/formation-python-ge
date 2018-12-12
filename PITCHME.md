@@ -786,3 +786,28 @@ Bob
 'first': 'Bob'}}
 ```
 ---
+## Clé manquante dans un dictionnaire
+
+```python
+>>> D = {'a': 1, 'b': 2, 'c': 3}
+>>> D
+{'a': 1, 'c': 3, 'b': 2}
+
+>>> D['e'] = 99  # Assigning new keys grows dictionaries
+>>> D
+{'a': 1, 'c': 3, 'b': 2, 'e': 99}
+
+>>> D['f']                           # Referencing a nonexistent key is an error
+...error text omitted...
+KeyError: 'f'
+```
+
+```python
+>>> 'f' in D
+False
+
+>>> if not 'f' in D:      # Python's sole selection statement
+       print('missing')
+
+       missing
+```
