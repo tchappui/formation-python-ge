@@ -569,8 +569,8 @@ replace(...)
     S.replace(old, new[, count]) -> str
     
         Return a copy of S with all occurrences of substring
-            old replaced by new.  If the optional argument count is
-                given, only the first count occurrences are replaced.
+        old replaced by new.  If the optional argument count is
+        given, only the first count occurrences are replaced.
 ```
 ---
 ## La puissance des expressions rationnelles
@@ -589,20 +589,20 @@ replace(...)
 Les actions sur les séquences sont valables:
 
 ```python
->>> L = [123, 'spam', 1.23]            # A list of three different-type objects
->>> len(L)                             # Number of items in the list
+>>> L = [123, 'spam', 1.23] # A list of three different-type objects
+>>> len(L)          # Number of items in the list
 3
->>> L[0]                               # Indexing by position
+>>> L[0]            # Indexing by position
 123
->>> L[:-1]                             # Slicing a list returns a new list
+>>> L[:-1]          # Slicing a list returns a new list
 [123, 'spam']
 
->>> L + [4, 5, 6]                      # Concat/repeat make new lists too
+>>> L + [4, 5, 6]   # Concat/repeat make new lists too
 [123, 'spam', 1.23, 4, 5, 6]
 >>> L * 2
 [123, 'spam', 1.23, 123, 'spam', 1.23]
 
->>> L                                  # We're not changing the original list
+>>> L               # We're not changing the original list
 [123, 'spam', 1.23]
 ```
 ---
@@ -610,13 +610,13 @@ Les actions sur les séquences sont valables:
 ## Quelques actions spécifiques
 
 ```python
->>> L.append('NI')                     # Growing: add object at end of list
+>>> L.append('NI')     # Growing: add object at end of list
 >>> L
 [123, 'spam', 1.23, 'NI']
 
->>> L.pop(2)                           # Shrinking: delete an item in the middle
+>>> L.pop(2)            # Shrinking: delete an item in the middle
 1.23
->>> L                                  # "del L[2]" deletes from a list too
+>>> L                   # "del L[2]" deletes from a list too
 [123, 'spam', 'NI']
 ```
 
@@ -652,17 +652,137 @@ IndexError: list assignment index out of range
 ## Imbriquer des listes
 
 ```python
->>> M = [[1, 2, 3],               # A 3 × 3 matrix, as nested lists
-         [4, 5, 6],               # Code can span lines if bracketed
+>>> M = [[1, 2, 3],  # A 3 × 3 matrix, as nested lists
+         [4, 5, 6],  # Code can span lines if bracketed
          [7, 8, 9]]
 >>> M
 [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
 
->>> M[1]                          # Get row 2
+>>> M[1]      # Get row 2
 [4, 5, 6]
 
->>> M[1][2]                       # Get row 2, then get item 3 within the row
+>>> M[1][2]   # Get row 2, then get item 3 within the row
 6
 ```
 ---
 
+## Les compréhensions
+
+```python
+w[1] for row in M] # Collect the items in column 2
+>>> col2
+[2, 5, 8]
+
+>>> M               # The matrix is unchanged
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+>>> [row[1] + 1 for row in M]                 # Add 1 to each item in column 2
+[3, 6, 9]
+
+>>> [row[1] for row in M if row[1] % 2 == 0]  # Filter out odd items
+[2, 8]
+```
+---
+
+```python
+>>> list(range(4))           # 0..3 (list() required in 3.X)
+[0, 1, 2, 3]
+>>> list(range(−6, 7, 2))    # −6 to +6 by 2 (need list() in 3.X)
+[−6, −4, −2, 0, 2, 4, 6]
+
+>>> [[x ** 2, x ** 3] for x in range(4)] # Multiple values, "if" filters
+[[0, 0], [1, 1], [4, 8], [9, 27]]
+>>> [[x, x / 2, x * 2] for x in range(−6, 7, 2) if x > 0]
+[[2, 1, 4], [4, 2, 8], [6, 3, 12]]
+```
+---
+
+## Les générateurs
+
+Un outils d'optimisation
+
+```python
+>>> G = sum(row) for row in M)  # Create a generator of row sums
+>>> next(G)                     # iter(G) not required here
+6
+>>> next(G)                     # Run the iteration protocol next()
+15
+>>> next(G)
+24
+```
+
+---
+
+## Les dictionnaires
+
+```python
+>>> D = {
+    'food': 'Spam', 
+    'quantity': 4, 
+    'color': 'pink'
+}
+
+>>> D['food']  
+'Spam'
+
+>>> D['quantity'] += 1 
+>>> D
+{'color': 'pink', 'food': 'Spam', 'quantity': 5}
+
+>>> D = {}
+>>> D['name'] = 'Bob'      # Create keys by assignment
+>>> D['job']  = 'dev'
+>>> D['age']  = 40
+
+>>> D
+{'age': 40, 'job': 'dev', 'name': 'Bob'}
+
+>>> print(D['name'])
+Bob
+```
+
+---
+
+## Créer des dictionnaires
+
+```python
+>>> bob1 = dict(name='Bob', job='dev', age=40)                      # Keywords
+>>> bob1
+{'age': 40, 'name': 'Bob', 'job': 'dev'}
+
+>>> bob2 = dict(zip(['name', 'job', 'age'], ['Bob', 'dev', 40]))    # Zipping
+>>> bob2
+{'job': 'dev', 'name': 'Bob', 'age': 40}
+```
+
+---
+
+## Imbriquer des structures de données
+
+```python
+>>> rec = {'name': {'first': 'Bob', 'last': 'Smith'},
+           'jobs': ['dev', 'mgr'],
+           'age':  40.5}
+```
+---
+
+## Accéder aux données imbriquées
+
+```python
+>>> rec['name'] 
+{'last': 'Smith', 'first': 'Bob'}
+
+>>> rec['name']['last']
+'Smith'
+
+>>> rec['jobs']
+['dev', 'mgr']
+>>> rec['jobs'][-1]
+'mgr'
+
+>>> rec['jobs'].append('janitor') 
+>>> rec
+{'age': 40.5, 'jobs': ['dev', 'mgr', 'janitor'], 'name': {'last': 'Smith',
+'first': 'Bob'}}
+```
+---
