@@ -577,7 +577,92 @@ replace(...)
 
 ```python
 >>> import re
->>> match = re.match('Hello[ \t ]*(.*)world', 'Hello    Python world')
->>> match.group(1)
+>>> m = re.match('Hello[ \t]*(.*)world', 'Hello  Python world')
+>>> m.group(1)
 'Python '
 ```
+
+---
+
+## Les listes
+
+Les actions sur les séquences sont valables:
+
+```python
+>>> L = [123, 'spam', 1.23]            # A list of three different-type objects
+>>> len(L)                             # Number of items in the list
+3
+>>> L[0]                               # Indexing by position
+123
+>>> L[:-1]                             # Slicing a list returns a new list
+[123, 'spam']
+
+>>> L + [4, 5, 6]                      # Concat/repeat make new lists too
+[123, 'spam', 1.23, 4, 5, 6]
+>>> L * 2
+[123, 'spam', 1.23, 123, 'spam', 1.23]
+
+>>> L                                  # We're not changing the original list
+[123, 'spam', 1.23]
+```
+---
+
+## Quelques actions spécifiques
+
+```python
+>>> L.append('NI')                     # Growing: add object at end of list
+>>> L
+[123, 'spam', 1.23, 'NI']
+
+>>> L.pop(2)                           # Shrinking: delete an item in the middle
+1.23
+>>> L                                  # "del L[2]" deletes from a list too
+[123, 'spam', 'NI']
+```
+
+```python
+>>> M = ['bb', 'aa', 'cc']
+>>> M.sort()
+>>> M
+['aa', 'bb', 'cc']
+>>> M.reverse()
+>>> M
+['cc', 'bb', 'aa']
+```
+
+---
+
+## Vérification des limites
+
+```python
+
+>>> L
+[123, 'spam', 'NI']
+
+>>> L[99]
+...error text omitted...
+IndexError: list index out of range
+
+>>> L[99] = 1
+...error text omitted...
+IndexError: list assignment index out of range
+```
+---
+
+## Imbriquer des listes
+
+```python
+>>> M = [[1, 2, 3],               # A 3 × 3 matrix, as nested lists
+         [4, 5, 6],               # Code can span lines if bracketed
+         [7, 8, 9]]
+>>> M
+[[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+
+>>> M[1]                          # Get row 2
+[4, 5, 6]
+
+>>> M[1][2]                       # Get row 2, then get item 3 within the row
+6
+```
+---
+
