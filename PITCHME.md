@@ -811,3 +811,54 @@ False
 
        missing
 ```
+
+---
+
+## Valeurs par défaut
+
+```python
+>>> value = D.get('x', 0)      # Index but with a default
+>>> value
+0
+>>> value = D['x'] if 'x' in D else 0 # if/else expression form
+>>> value
+0
+```
+---
+
+## Trier les clés d'un dictionnaire
+
+```python
+>>> Ks = list(D.keys())       
+>>> Ks                       
+['a', 'c', 'b']
+
+>>> Ks.sort()                  
+>>> Ks
+['a', 'b', 'c']
+
+>>> for key in Ks:  
+        print(key, '=>', D[key])
+
+a => 1
+b => 2
+c => 3
+```
+---
+
+## Plus lisible avec sorted()
+
+```python
+>>> D
+{'a': 1, 'c': 3, 'b': 2}
+
+>>> for key in sorted(D):
+        print(key, '=>', D[key])
+
+a => 1
+b => 2
+c => 3
+```
+---
+
+
