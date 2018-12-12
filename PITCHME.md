@@ -61,4 +61,4 @@ La bonne question est: est-ce **suffisant** pour ce que je veux?
 
 ### Utiliser une invite de commande interactive
 
-[](https://gyazo.com/7b11a332b107f67bdce747a0a29919f9.png)
+![](https://gyazo.com/7b11a332b107f67bdce747a0a29919f9.png)
