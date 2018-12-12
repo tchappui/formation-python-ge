@@ -65,12 +65,15 @@ La bonne question est: est-ce **suffisant** pour ce que je veux?
 
 ---
 
+@snap[north]
 #### Sous Windows
+@snapend
 
-Exécutez la commande python dans un terminal
+Exécutez la commande python dans un terminal:
 
-- Anaconda prompt (si utilisation de anaconda)
+- **Anaconda prompt** (si utilisation de anaconda)
 - cmd.exe
 - Powershell
 - Idle
 - Votre éditeur préféré 
+
