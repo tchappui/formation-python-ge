@@ -162,3 +162,77 @@ win32
 1267650600228229401496703205376
 Spam!Spam!Spam!Spam!Spam!Spam!Spam!Spam!
 ```
+
+```console
+$ python premierscript.py > saveit.txt
+```
+
+```console
+$ py -3 premierscript.py
+```
+
+---
+
+## Le shebang et l'encodage
+
+```python
+#!/usr/bin/env python
+#-*- coding: utf8
+
+...le reste du script vient ici...
+```
+---
+
+## Importer et recharger
+
+```python
+>>> import premierscript
+win32
+1267650600228229401496703205376
+Spam!Spam!Spam!Spam!Spam!Spam!Spam!Spam!
+```
+
+```python
+...Changez premierscript dans un éditeur et tentez de ré-importer...
+>>> import script1
+>>> import script1
+```
+
+---
+
+## reload() pour ce genre de situation
+
+```python
+>>> from imp import reload
+>>> reload(premierscript)
+win32
+65536
+Spam!Spam!Spam!Spam!Spam!Spam!Spam!Spam!
+??? from here until ???END lines may have been inserted/deleted
+<module 'script1' from '.\\script1.py'>
+>>>
+```
+---
+
+## Première introduction aux modules
+
+```python
+$  python
+>>> import myfile
+>>> myfile.title 
+'The Meaning of Life'
+```
+
+```python
+$  python
+>>> from myfile import title
+>>> title 
+'The Meaning of Life'
+```
+
+---?color=#E58537
+
+## Les modules sont des espaces de noms
+
+
+
