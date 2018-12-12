@@ -9,7 +9,9 @@ Formateur Python et Professeur à la Haute Ecole d'Ingénierie de Fribourg
 
 ---
 
-## Pourquoi python est-il si populaire?
+@snap[span-100]
+## Pourquoi Python est-il si populaire?
+@snapend
 
 - La qualité logicielle au centre
 - Productivité accrue
