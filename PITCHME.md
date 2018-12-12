@@ -1,7 +1,7 @@
 # Formation Python
 
 ---
-@snap[north span-100]
+@snap[span-100]
 ## Thierry Chappuis
 @snapend
 
