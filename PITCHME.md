@@ -94,14 +94,14 @@ $ python monfichier.py
 
 Sur windows (dans un terminal):
 
-```
+```console
 $ python -m venv env
 $ env\scripts\activate
 (env) $
 ```
 Sur les autres systèmes:
 
-```
+```console
 $ python3 -m venv env
 $ source env/bin/activate
 (env) $
@@ -111,11 +111,11 @@ $ source env/bin/activate
 
 ## Se simplifier la vie avec pipenv
 
-```
+```console
 $ pip install pipenv
 ```
 
-```
+```console
 $ pipenv install requests django gunicorn
 $ pipenv shell
 ```
