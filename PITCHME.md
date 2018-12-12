@@ -514,3 +514,70 @@ TypeError: 'str' object does not support item assignment
 >>> ''.join(L)                                      # Join with empty delimiter
 'scrubbery'
 ```
+---
+
+## Nombreuses opérations sur les chaines
+
+```python
+>>> line = 'aaa,bbb,ccccc,dd'
+>>> line.split(',')              # Split on a delimiter into a list of substrings
+['aaa', 'bbb', 'ccccc', 'dd']
+
+>>> S = 'spam'
+>>> S.upper()                    # Upper- and lowercase conversions
+'SPAM'
+>>> S.isalpha()                  # Content tests: isalpha, isdigit, etc.
+True
+
+>>> line = 'aaa,bbb,ccccc,dd\n'
+>>> line.rstrip()                # Remove whitespace characters on the right side
+'aaa,bbb,ccccc,dd'
+>>> line.rstrip().split(',')     # Combine two operations
+['aaa', 'bbb', 'ccccc', 'dd']
+```
+---
+## Formater des chaines à la volée
+
+```python
+>>> '%s, eggs, and %s' % ('spam', 'SPAM!')          # Formatting expression (all)
+'spam, eggs, and SPAM!'
+
+>>> '{0}, eggs, and {1}'.format('spam', 'SPAM!')    # Formatting method (2.6+, 3.0+)
+'spam, eggs, and SPAM!'
+
+>>> '{}, eggs, and {}'.format('spam', 'SPAM!')      # Numbers optional (2.7+, 3.1+)
+'spam, eggs, and SPAM!'
+```
+
+```python
+>>> '{:,.2f}'.format(296999.2567)                   # Separators, decimal digits
+'296,999.26'
+>>> '%.2f | %+05d' % (3.14159, −42)                 # Digits, padding, signs
+'3.14 | −0042'
+```
+---
+
+## Obtenir de l'aide
+
+Les fontions dir() et help():
+
+```python
+>>> help(S.replace)
+Help on built-in function replace:
+
+replace(...)
+    S.replace(old, new[, count]) -> str
+    
+        Return a copy of S with all occurrences of substring
+            old replaced by new.  If the optional argument count is
+                given, only the first count occurrences are replaced.
+```
+---
+## La puissance des expressions rationnelles
+
+```python
+>>> import re
+>>> match = re.match('Hello[ \t ]*(.*)world', 'Hello    Python world')
+>>> match.group(1)
+'Python '
+```
