@@ -84,7 +84,7 @@ Exécutez la commande python dans un terminal:
 --- 
 ## Exécuter un fichier Python depuis un terminal
 
-```
+```console
 $ python monfichier.py
 ```
 
