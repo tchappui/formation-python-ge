@@ -104,6 +104,6 @@ venv.bak/
 .mypy_cache/
 
 *.swp
-**/.DS_Store
 *.swn
 *.swo
+**/.DS_Store
